@@ -2,8 +2,8 @@
           package="com.hzy.uikit">
 
     <application>
-        <activity android:name=".ui.RecentContactsActivity" android:screenOrientation="portrait"/>
         <activity android:name=".ui.P2PMessageActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.TeamMessageActivity" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

@@ -5,14 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import com.hzy.uikit.R
 
 /**
- * 最近联系人列表
+ * 群组聊天
+ * @author: ziye_huang
+ * @date: 2019/5/17
  */
-class RecentContactsActivity : AppCompatActivity() {
+class TeamMessageActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recent_contacts)
+        setContentView(R.layout.activity_team_message)
     }
-
 
 }
