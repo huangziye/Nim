@@ -1,11 +1,13 @@
 package com.hzy.nim.ui
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.hzy.nim.R
+import com.hzy.uikit.api.NimUIKit
 import com.hzy.uikit.code.NimStatusCode
 import com.hzy.uikit.util.NimUtil
 import com.hzy.utils.ACache
@@ -34,6 +36,21 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    companion object {
+        private val KICK_OUT = "KICK_OUT"
+
+        fun start(context: Context) {
+            start(context, false)
+        }
+
+        fun start(context: Context, kickOut: Boolean) {
+            val intent = Intent(context, LoginActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            intent.putExtra(KICK_OUT, kickOut)
+            context.startActivity(intent)
+        }
+    }
+
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btn_login -> {
@@ -47,6 +64,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                     override fun onSuccess(loginInfo: LoginInfo?) {
                         loginInfo?.account?.toast(this@LoginActivity)
                         ACache.get(this@LoginActivity).put("loginInfo", loginInfo)
+                        // APP 直接调用 SDK 登陆方法成功之后，需要调用该方法通知UIKit
+                        NimUIKit.loginSuccess(loginInfo!!.account)
                         startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                         finish()
                     }

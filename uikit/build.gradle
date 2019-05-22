@@ -29,11 +29,21 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.0.2'
-    api 'androidx.recyclerview:recyclerview:1.0.0-alpha1'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0-alpha1'
     api 'com.github.huangziye:CommonUtils:1.0.9'
-    api 'me.leolin:ShortcutBadger:1.1.22@aar'
+    implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
+    implementation 'com.alibaba:fastjson:1.1.71.android'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    implementation 'com.google.android.material:material:1.0.0-rc01'
+    implementation 'me.everything:overscroll-decor-android:1.0.4'
+    implementation group: 'org.json', name: 'json', version: '20180813'
 
     // 添加依赖。注意，版本号必须一致。
     // 基础功能 (必需)
     api 'com.netease.nimlib:basesdk:6.3.0'
+    // 聊天室需要
+    api 'com.netease.nimlib:chatroom:6.3.0'
+    // 全文检索服务需要
+    api 'com.netease.nimlib:lucene:6.3.0'
 }

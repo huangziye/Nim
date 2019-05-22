@@ -55,13 +55,17 @@
                 android:name="com.netease.nim.appKey"
                 android:value="5d0b634f95025182e1f2626ce4885369"/>
 
-        <activity android:name=".ui.LoginActivity" android:screenOrientation="portrait">
+        <activity android:name=".ui.WelcomeActivity" android:screenOrientation="portrait"
+                  android:theme="@style/WelcomeEntranceActionBarTheme"
+                  android:configChanges="keyboardHidden|orientation"
+                  android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".ui.LoginActivity" android:screenOrientation="portrait"/>
         <activity android:name=".ui.MainActivity" android:screenOrientation="portrait"/>
 
 

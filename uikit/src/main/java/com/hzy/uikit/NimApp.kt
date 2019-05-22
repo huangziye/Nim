@@ -6,7 +6,8 @@ import android.graphics.Bitmap
 import android.graphics.Color
 import android.os.Environment
 import android.text.TextUtils
-import com.hzy.uikit.ui.P2PMessageActivity
+import com.hzy.uikit.api.NimUIKit
+import com.hzy.uikit.business.session.activity.P2PMessageActivity
 import com.hzy.utils.ACache
 import com.hzy.utils.AppUtil
 import com.netease.nimlib.sdk.NIMClient
@@ -16,6 +17,7 @@ import com.netease.nimlib.sdk.auth.LoginInfo
 import com.netease.nimlib.sdk.msg.constant.SessionTypeEnum
 import com.netease.nimlib.sdk.uinfo.UserInfoProvider
 import com.netease.nimlib.sdk.uinfo.model.UserInfo
+import com.netease.nimlib.sdk.util.NIMUtil
 import java.io.IOException
 
 /**
@@ -25,10 +27,18 @@ import java.io.IOException
  */
 open class NimApp : Application() {
 
+    companion object {
+        lateinit var instance: NimApp
+    }
+
     override fun onCreate() {
         super.onCreate()
+        instance = this
         // SDK初始化（启动后台服务，若已经存在用户登录信息， SDK 将完成自动登录）
         NIMClient.init(this, loginInfo(), options())
+        if (NIMUtil.isMainProcess(this)) {
+            NimUIKit.init(this)
+        }
     }
 
     /**
@@ -101,7 +111,7 @@ open class NimApp : Application() {
             // SD卡应用扩展存储区(APP卸载后，该目录下被清除，用户也可以在设置界面中手动清除)，请根据APP对数据缓存的重要性及生命周期来决定是否采用此缓存目录.
             // 该存储区在API 19以上不需要写权限，即可配置 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18"/>
             if (context.externalCacheDir != null) {
-                storageRootPath = context.externalCacheDir.canonicalPath
+                storageRootPath = context.externalCacheDir?.canonicalPath
             }
         } catch (e: IOException) {
             e.printStackTrace()
