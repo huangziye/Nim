@@ -240,24 +240,18 @@ public class PinYin {
             "z", "z", "z",};
 
     private static Context context;
-
     private static byte[] indexes;
-
     private static final Object lock = new Object();
 
     private static byte[] loadIndexes(Context context) {
         byte[] indexes = null;
-
         InputStream is = null;
         try {
             is = context.getAssets().open(ASSET);
-
             indexes = new byte[(END - START + 1) * 2];
-
             is.read(indexes);
         } catch (Throwable tr) {
             tr.printStackTrace();
-
             indexes = null;
         } finally {
             if (is != null) {

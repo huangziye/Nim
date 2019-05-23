@@ -39,6 +39,8 @@ dependencies {
     implementation 'me.everything:overscroll-decor-android:1.0.4'
     implementation group: 'org.json', name: 'json', version: '20180813'
 
+    api 'jp.wasabeef:glide-transformations:3.0.1'
+
     // 添加依赖。注意，版本号必须一致。
     // 基础功能 (必需)
     api 'com.netease.nimlib:basesdk:6.3.0'
@@ -46,4 +48,6 @@ dependencies {
     api 'com.netease.nimlib:chatroom:6.3.0'
     // 全文检索服务需要
     api 'com.netease.nimlib:lucene:6.3.0'
+    // 小米、华为、魅族、fcm 推送
+    api 'com.netease.nimlib:push:6.3.0'
 }
