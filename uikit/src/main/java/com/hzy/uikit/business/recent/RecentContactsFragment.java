@@ -54,28 +54,19 @@ public class RecentContactsFragment extends TFragment {
 
     // view
     private RecyclerView recyclerView;
-
     private View emptyBg;
-
     private TextView emptyHint;
-
     // data
     private List<RecentContact> items;
-
     private Map<String, RecentContact> cached; // 暂缓刷上列表的数据（未读数红点拖拽动画运行时用）
-
     private RecentContactAdapter adapter;
-
     private boolean msgLoaded = false;
-
     private RecentContactsCallback callback;
-
     private UserInfoObserver userInfoObserver;
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
         findViews();
         initMessageList();
         requestMessages(true);

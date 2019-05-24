@@ -19,7 +19,12 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:titleTextAppearance="@style/Toolbar.TitleText"
-            app:subtitleTextAppearance="@style/Toolbar.SubTitleText"/>
+            app:subtitleTextAppearance="@style/Toolbar.SubTitleText"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:contentInsetStartWithNavigation="0dp"
+            app:layout_scrollFlags="enterAlways|scroll"
+            app:titleTextColor="@android:color/white"/>
     </com.google.android.material.appbar.AppBarLayout>
 
 </LinearLayout>

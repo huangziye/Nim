@@ -31,13 +31,15 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.recyclerview:recyclerview:1.0.0-alpha1'
     api 'com.github.huangziye:CommonUtils:1.0.9'
+    api 'com.github.huangziye:TitleView:1.0.1'
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
     implementation 'com.alibaba:fastjson:1.1.71.android'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
     implementation 'com.google.android.material:material:1.0.0-rc01'
     implementation 'me.everything:overscroll-decor-android:1.0.4'
-    implementation group: 'org.json', name: 'json', version: '20180813'
+    implementation 'org.json:json:20180813'
+    api 'com.jaeger.statusbarutil:library:1.5.1'
 
     api 'jp.wasabeef:glide-transformations:3.0.1'
 

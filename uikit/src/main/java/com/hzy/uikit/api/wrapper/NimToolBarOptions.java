@@ -9,8 +9,10 @@ import com.hzy.uikit.common.activity.ToolBarOptions;
 public class NimToolBarOptions extends ToolBarOptions {
 
     public NimToolBarOptions() {
-        logoId = R.drawable.nim_actionbar_nest_dark_logo;
-        navigateId = R.drawable.nim_actionbar_dark_back_icon;
+        // 设置返回按钮 logoId，如果不需要设置为0
+//        logoId = R.drawable.nim_actionbar_nest_dark_logo;
+        logoId = 0;
+        navigateId = R.drawable.nim_actionbar_white_back_icon;
         isNeedNavigate = true;
     }
 }
