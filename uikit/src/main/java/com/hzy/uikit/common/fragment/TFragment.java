@@ -12,9 +12,7 @@ import com.hzy.uikit.common.util.log.LogUtil;
 
 public abstract class TFragment extends Fragment {
     private static final Handler handler = new Handler();
-
     private int containerId;
-
     private boolean destroyed;
 
     protected final boolean isDestroyed() {
@@ -31,17 +29,13 @@ public abstract class TFragment extends Fragment {
 
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
         LogUtil.ui("fragment: " + getClass().getSimpleName() + " onActivityCreated()");
-
         destroyed = false;
     }
 
     public void onDestroy() {
         super.onDestroy();
-
         LogUtil.ui("fragment: " + getClass().getSimpleName() + " onDestroy()");
-
         destroyed = true;
     }
 
@@ -116,9 +110,7 @@ public abstract class TFragment extends Fragment {
             return;
         }
 
-        imm.hideSoftInputFromWindow(
-                view.getWindowToken(),
-                InputMethodManager.HIDE_NOT_ALWAYS);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
     }
 
     protected <T extends View> T findView(int resId) {

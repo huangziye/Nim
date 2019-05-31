@@ -31,6 +31,7 @@ import com.hzy.uikit.common.ui.dialog.CustomAlertDialog;
 import com.hzy.uikit.common.ui.dialog.EasyAlertDialogHelper;
 import com.hzy.uikit.common.ui.popupmenu.NIMPopupMenu;
 import com.hzy.uikit.common.ui.popupmenu.PopupMenuItem;
+import com.hzy.uikit.impl.customization.DefaultRecentCustomization;
 import com.hzy.utils.ACache;
 import com.netease.nimlib.sdk.NIMClient;
 import com.netease.nimlib.sdk.auth.LoginInfo;
@@ -43,6 +44,7 @@ import com.netease.nimlib.sdk.msg.constant.MsgTypeEnum;
 import com.netease.nimlib.sdk.msg.constant.SessionTypeEnum;
 import com.netease.nimlib.sdk.msg.model.IMMessage;
 import com.netease.nimlib.sdk.msg.model.LocalAntiSpamResult;
+import com.netease.nimlib.sdk.msg.model.RecentContact;
 import com.netease.nimlib.sdk.robot.model.RobotAttachment;
 
 import java.util.ArrayList;
@@ -54,31 +56,18 @@ import java.util.List;
 public class SessionHelper {
 
     private static final int ACTION_HISTORY_QUERY = 0;
-
     private static final int ACTION_SEARCH_MESSAGE = 1;
-
     private static final int ACTION_CLEAR_MESSAGE = 2;
-
     private static final int ACTION_CLEAR_P2P_MESSAGE = 3;
-
     private static SessionCustomization p2pCustomization;
-
     private static SessionCustomization normalTeamCustomization;
-
     private static SessionCustomization advancedTeamCustomization;
-
     private static SessionCustomization myP2pCustomization;
-
     private static SessionCustomization robotCustomization;
-
     private static RecentCustomization recentCustomization;
-
     private static NIMPopupMenu popupMenu;
-
     private static List<PopupMenuItem> menuItemList;
-
     public static final boolean USE_LOCAL_ANTISPAM = true;
-
 
     public static void init() {
         // 注册自定义消息附件解析器
@@ -317,7 +306,7 @@ public class SessionHelper {
     }
 
     private static RecentCustomization getRecentCustomization() {
-        /*if (recentCustomization == null) {
+        if (recentCustomization == null) {
             recentCustomization = new DefaultRecentCustomization() {
 
                 @Override
@@ -325,7 +314,7 @@ public class SessionHelper {
                     switch (recent.getMsgType()) {
                         case avchat:
                             MsgAttachment attachment = recent.getAttachment();
-                            AVChatAttachment avchat = (AVChatAttachment) attachment;
+                            /*AVChatAttachment avchat = (AVChatAttachment) attachment;
                             if (avchat.getState() == AVChatRecordState.Missed && !recent.getFromAccount().equals(
                                     NimUIKit.getAccount())) {
                                 // 未接通话请求
@@ -351,12 +340,12 @@ public class SessionHelper {
                                 } else {
                                     return ("[音频电话]");
                                 }
-                            }
+                            }*/
                     }
                     return super.getDefaultDigest(recent);
                 }
             };
-        }*/
+        }
         return recentCustomization;
     }
 

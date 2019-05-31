@@ -24,9 +24,7 @@ import java.util.List;
 public abstract class UI extends AppCompatActivity {
 
     private boolean destroyed = false;
-
     private static Handler handler;
-
     private Toolbar toolbar;
 
     @Override
