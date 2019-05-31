@@ -34,7 +34,6 @@ public abstract class UI extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         LogUtil.ui("activity: " + getClass().getSimpleName() + " onCreate()");
     }
 
@@ -47,7 +46,6 @@ public abstract class UI extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
         LogUtil.ui("activity: " + getClass().getSimpleName() + " onDestroy()");
         destroyed = true;
     }
@@ -83,6 +81,7 @@ public abstract class UI extends AppCompatActivity {
         if (options.logoId != 0) {
             toolbar.setLogo(options.logoId);
         }
+        toolbar.setBackgroundColor(options.toolbarBgColor);
         setSupportActionBar(toolbar);
 
         if (options.isNeedNavigate) {

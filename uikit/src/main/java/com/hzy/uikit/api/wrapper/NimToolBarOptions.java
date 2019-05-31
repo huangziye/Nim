@@ -1,5 +1,6 @@
 package com.hzy.uikit.api.wrapper;
 
+import android.graphics.Color;
 import com.hzy.uikit.R;
 import com.hzy.uikit.common.activity.ToolBarOptions;
 
@@ -14,5 +15,6 @@ public class NimToolBarOptions extends ToolBarOptions {
         logoId = 0;
         navigateId = R.drawable.nim_actionbar_white_back_icon;
         isNeedNavigate = true;
+        toolbarBgColor = Color.parseColor("#1A1A1A");
     }
 }

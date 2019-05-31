@@ -24,4 +24,9 @@ public class ToolBarOptions {
      * toolbar的返回按钮
      */
     public boolean isNeedNavigate;
+
+    /**
+     * toolbar背景颜色
+     */
+    public int toolbarBgColor;
 }
