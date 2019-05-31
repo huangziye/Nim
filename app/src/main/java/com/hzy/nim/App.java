@@ -2,9 +2,9 @@ package com.hzy.nim;
 
 import android.app.Activity;
 import android.app.Application;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
-import androidx.core.content.ContextCompat;
 import com.hzy.nim.chatroom.ChatRoomSessionHelper;
 import com.hzy.nim.config.preference.Preferences;
 import com.hzy.nim.config.preference.UserPreferences;
@@ -59,7 +59,7 @@ public class App extends Application {
             registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
                 @Override
                 public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-                    StatusBarUtil.setColor(activity, ContextCompat.getColor(activity, R.color.colorPrimary), 0);
+                    StatusBarUtil.setColor(activity, Color.parseColor("#1A1A1A"), 0);
                 }
 
                 @Override

@@ -14,7 +14,6 @@ import com.hzy.uikit.api.model.session.SessionCustomization;
 import com.hzy.uikit.business.ait.AitManager;
 import com.hzy.uikit.business.session.actions.BaseAction;
 import com.hzy.uikit.business.session.actions.ImageAction;
-import com.hzy.uikit.business.session.actions.LocationAction;
 import com.hzy.uikit.business.session.actions.VideoAction;
 import com.hzy.uikit.business.session.constant.Extras;
 import com.hzy.uikit.business.session.module.Container;
@@ -380,7 +379,7 @@ public class MessageFragment extends TFragment implements ModuleProxy {
         List<BaseAction> actions = new ArrayList<>();
         actions.add(new ImageAction());
         actions.add(new VideoAction());
-        actions.add(new LocationAction());
+//        actions.add(new LocationAction());
 
         if (customization != null && customization.actions != null) {
             actions.addAll(customization.actions);
